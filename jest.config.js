@@ -10,9 +10,9 @@ module.exports = {
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    // "moduleNameMapper": {
-    //   "src/(.*)": "<rootDir>/src/$1"
-    // },
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/src/$1"
+    },
     "collectCoverageFrom": [
       "**/*.{js,jsx,ts,tsx}",
       "!**/*.entity.ts",
