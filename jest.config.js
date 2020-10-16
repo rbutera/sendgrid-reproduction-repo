@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
     "testEnvironment": "node",
     "collectCoverage": true,
@@ -5,13 +7,10 @@ module.exports = {
     "roots": ["src"],
     "testRegex": ".spec.ts$",
     "coverageDirectory": "../coverage",
-    "moduleDirectories": ["node_modules", "src"],
+    "moduleDirectories": ["node_modules", "src", __dirname],
     "clearMocks": true,
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "moduleNameMapper": {
-      "src/(.*)": "<rootDir>/src/$1"
     },
     "collectCoverageFrom": [
       "**/*.{js,jsx,ts,tsx}",

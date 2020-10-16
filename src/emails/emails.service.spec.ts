@@ -1,6 +1,6 @@
 import { SendGridModule } from '@ntegral/nestjs-sendgrid';
 import { Test, TestingModule } from '@nestjs/testing';
-import { EmailsService } from './emails.service';
+import { EmailsService, baz } from './emails.service';
 
 describe('EmailsService', () => {
   let service;
@@ -20,5 +20,9 @@ describe('EmailsService', () => {
 
   it('should be defined', () => {
     expect(service).toBeDefined();
+  });
+
+  it('should also export bar as baz', () => {
+    expect(baz).toEqual('bar');
   });
 });
