@@ -1,4 +1,4 @@
-import { SendGridService } from '@ntegral/nestjs-sendgrid/dist/services/sendgrid.service';
+import { SendGridModule } from '@ntegral/nestjs-sendgrid';
 import { Test, TestingModule } from '@nestjs/testing';
 import { EmailsService } from './emails.service';
 
@@ -7,10 +7,12 @@ describe('EmailsService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [SendGridService],
-      providers: [
-        EmailsService,
+      imports: [
+        SendGridModule.forRoot({
+          apiKey: 'SG.my_secret_key',
+        }),
       ],
+      providers: [EmailsService],
     }).compile();
 
     service = module.get<EmailsService>(EmailsService);
